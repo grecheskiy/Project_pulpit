@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <title>TableView - Startup</title> 
+  <style>
+    .left_menu {
+        float:left; 
+        width:14%; 
+        margin-left:1%
+        }
+        .right {
+        float:right; 
+        width:84%
+        }
+        .right2 {
+            float:right; 
+            width:84%
+            }
+  </style>
+  <meta charset="utf-8"> 
+  <link rel=”stylesheet” href=”styles.css”>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
+</head> 
+<body>
+    <div class="left_menu">
+        <h2 class="text-center"><u>Menu</u></h2><br>
+        <ul class="menu1">
+            <form method='get'>
+                <input type="submit" value="Show table 1"  name="table1">
+            </form>
+            
+        </ul>   
+    </div>
+    <div class="right"> 
+        <h2 class="text-center"><u>MedPubArticles</u></h2><br>             
+        <table class="table table-dark table-striped"> 
+            <thead> 
+            <tr> 
+                <th>idArt</th> 
+                <th>Author</th> 
+                <th>Title</th> 
+                <th>Abstract</th> 
+                <th>Year</th> 
+            </tr> 
+            </thead> 
+            <tbody> 
+            <!-- jinja2 Technique -->
+            {% if d1 %}   
+            {% for i in d1 %} 
+            <tr> 
+                <td>{{i.idArt}}</td> 
+                <td>{{i.Author}}</td> 
+                <td>{{i.Title}}</td> 
+                <td>{{i.Abstract}}</td> 
+                <td>{{i.Year}}</td> 
+            </tr> 
+            {% endfor %} 
+            {% endif %} 
+            </tbody> 
+        </table> 
+    </div> 
+</body>
+</html>
